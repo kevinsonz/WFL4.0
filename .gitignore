@@ -20,3 +20,7 @@ rad.json
 *.flf
 #Test results file
 TestResults.xml
+#GoogleファイルID
+src/specific.js
+#Macの不要な隠しファイル
+.DS_Store
