@@ -10,7 +10,6 @@
 ＜本番環境＞  
 ・Googleスプレッドシート（GSS）＋GAS（Google Apps Script）  
 ・LL（ライフログ）シート＋MBO（目標（予定）⇔評価（振返））シート  
-  
 ＜動作確認＞  
 ・PC：Mac  
 ・SP：iPhone  
