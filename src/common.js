@@ -80,3 +80,5 @@ const nowHh = nowDdHhMm.substr(2,2);
 const nowMm = nowDdHhMm.substr(4,2);
 const nowYMD = new Date(todayYyyy, todayMm, todayDd); // 年月日
 const nowYMDHM = new Date(todayYyyy, todayMm, todayDd, nowHh, nowMm, 0); // 年月日時分
+
+// GAS GitHubアシスタント Test 2023/09/17
