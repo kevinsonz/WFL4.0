@@ -1,4 +1,4 @@
-// 常駐的な処理
+// LL常駐処理
 
 const runFlagData = llSheet.getRange('H2').getValue();
 const runFlagCols = logLastCol;

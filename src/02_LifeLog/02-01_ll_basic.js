@@ -1,4 +1,4 @@
-// 基本的な処理
+// LL基本処理
 
 function formatReset() {
     setLogWidth(); // 幅

@@ -1,4 +1,4 @@
-// ある目的に対する処理
+// LL特別処理
 
 function logSheetCreate(){
     setLog();
