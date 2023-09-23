@@ -1,0 +1,15 @@
+{
+  "name": "wfl",
+  "version": "1.0.0",
+  "description": "- ライフログ（時間単位の記録）、目標（予定）⇔評価（振返）を管理・記録するツールです。   このツールを活用することにより、人生の計画と管理が行えるようになります。   ※PCだけでなく、SmartPhone（以降SP）でも使用できることを前提に作り込んでいます。   ※現在V4開発中です。   →現在V3運用中ですが、GitHubにはV4以降のモノを反映していく予定です。   <br />",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/google-apps-script": "^1.0.70"
+  }
+}
