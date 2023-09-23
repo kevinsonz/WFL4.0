@@ -24,3 +24,6 @@ TestResults.xml
 src/specific.js
 #Macの不要な隠しファイル
 .DS_Store
+
+node_modules
+package-lock.json
