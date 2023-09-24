@@ -1,5 +1,6 @@
 // LL共通処理
 
+// データのみ削除（何のために作った？）
 function setLogClear(){
   llSheet.getRange(logDayDataStartRow, logSheetStartCol, logDataNum, logSheetEndCol).clearContent();
 }
@@ -36,10 +37,12 @@ function setLogMidashi() {
   llSheet.getRange(logFilterRow,logSheetErrorCol).setFormula('=sum(N3:N)');
 }
 
+// 日付関数配布
 function formulaDataDay(rowStart, rows){
   llSheet.getRange(rowStart, logSheetDateCol, rows,1).setFormula('=offset($B' + rowStart + ',-1,0)+if($A' + rowStart + '=TRUE,1,0)'); // 日エリア（2行目以降）
 }
 
+// 日ヘッダー行数式設定
 function formulaHeaderTime(row){
   llSheet.getRange(row, logSheetTimeStartCol).setFormula('=$B' + row + '+$E' + row + '/24');
   llSheet.getRange(row, logSheetTimeEndCol).setFormula('=$C' + row);
@@ -47,24 +50,29 @@ function formulaHeaderTime(row){
   llSheet.getRange(row, logSheetSageChiCol).setFormula('=countifs(Q7:Q,Q' + row + ')');
 }
 
+// 開始時刻列数式設定
 function formulaStartTime(rowStart, rows){
   llSheet.getRange(rowStart, logSheetTimeStartCol, rows, 1).setFormula('=$B' + rowStart + '+offset($C' + rowStart + ',if(offset(C' + rowStart + ',-1,2)="01日",-5,-1),1)');
 }
 
+// 終了時刻列数式設定
 function formulaEndTime(rowStart, rows){
   llSheet.getRange(rowStart, logSheetTimeEndCol, rows, 1).setFormula('=$C' + rowStart + '+$E' + rowStart + '/24');
 }
 
+// アゲサゲ数値化数式設定
 function formulaAgeSageDd(rowStart, rows) {
   llSheet.getRange(rowStart, logSheetAgeChiCol, rows, 1).setFormula('=if($J' + rowStart + '=TRUE,1,0)'); // ↑値列
   llSheet.getRange(rowStart, logSheetSageChiCol, rows, 1).setFormula('=if($K' + rowStart + '=TRUE,-1,0)'); // ↓値列
   llSheet.getRange(rowStart, logSheetDdCol, rows, 1).setFormula('=day($B' + rowStart + ')'); // dd列（データ行）
 }
 
+// Error列数式設定
 function formulaRuleKizami(rowStart, rows) {
   llSheet.getRange(rowStart, logSheetErrorCol, rows, 1).setFormula('=if(AND($E' + rowStart + '<>"",$E' + rowStart + '<>"01日"),if(mod($E' + rowStart + ',0.25)<>0,1,0),0)'); // Error列
 }
 
+// 年・月・年月列数式設定
 function formulaYyyyMm(rowStart, rows){
   llSheet.getRange(rowStart, logSheetYyyyCol, rows, 1).setFormula('=year($B' + rowStart + ')'); // yyyy列
   llSheet.getRange(rowStart, logSheetMmCol, rows, 1).setFormula('=month($B' + rowStart + ')'); // mm列
@@ -193,21 +201,25 @@ function headerList(row) {
   llSheet.getRange(row, logSheetCodeCol).setValue('未完');
 }
 
+// 日ヘッダー色付け
 function colorHeader(startRow, rows){
       llSheet.getRange(startRow, logSheetStartCol, rows, logSheetEndCol).setBackground('Maroon');
       llSheet.getRange(startRow, logSheetStartCol, rows, logSheetEndCol).setFontColor('White');
 }
 
+// MBOエリア（01週）色付け
 function colorMboRowWeek(startRow, rows){
       llSheet.getRange(startRow, logSheetStartCol, rows, logSheetEndCol).setBackground('midnightblue');
       llSheet.getRange(startRow, logSheetStartCol, rows, logSheetEndCol).setFontColor('White');
 }
 
+// MBOエリア（01日）色付け
 function colorMboRowDay(startRow, rows){
       llSheet.getRange(startRow, logSheetStartCol, rows, logSheetEndCol).setBackground('LightSteelBlue');
       // llSheet.getRange(startRow, logSheetStartCol, rows, logSheetEndCol).setFontColor('Black'); // 色分けのため
 }
 
+// データエリア色付け
 function colorDayData(startRow, rows){
   llSheet.getRange(startRow, logSheetStartCol, rows, logSheetEndCol).setFontColor('black');
   llSheet.getRange(startRow, logSheetStartCol, rows, logSheetEndCol).setBackground(null);
@@ -228,6 +240,7 @@ function setLogColor() {
   }
 }
 
+// A列隠し
 function setLogHideCol(){
   llSheet.hideColumns(logSheetStartCol, 1);
 }

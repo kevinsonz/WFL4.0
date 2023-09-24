@@ -1,5 +1,6 @@
 // LL常駐処理
 
+// 変数
 const runFlagData = llSheet.getRange('H2').getValue();
 const runFlagCols = logLastCol;
 const runFlagOff = runFlagData === '' && runFlagCols === 18;
@@ -78,6 +79,7 @@ function imaKokoError(){
   }
 }
 
+// コード色分け（単体）
 function fontCodeColor(row){
   const logDayCode = llSheet.getRange(row, logSheetCodeCol).getValue();
   switch (logDayCode){
@@ -133,6 +135,7 @@ function supportCol(){
   }
 }
 
+// コード色分け（全体）
 function codeColorReset(){
   console.log('logData', logData);
   if(runFlagOff){
@@ -141,7 +144,7 @@ function codeColorReset(){
       if(logHeaderCheck === false){
         const colorData = logFontColor[i][7].asRgbColor().asHexString();
         const codeData = logData[i][logSheetCodeCol - 1];
-        let codeColor16 = '';
+        let codeColor16 = ''; // 16進数という意味。
         switch (codeData){
         case 'W':
           codeColor16 = '#0000ff';
@@ -178,6 +181,7 @@ function codeColorReset(){
   }
 }
 
+// シート初期化？なぜ常駐処理に？
 function logSheetCreateCall(){
   if(runFlagOff){
     logSheetCreate();

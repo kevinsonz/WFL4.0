@@ -6,6 +6,7 @@ function logSheetCreate(){
   setSheetInit();
 }
 
+// 書式・数式再設定（未完成？）
 function formatReset() {
   setLogWidth(); // 幅
   setLogMidashi(); // 見出し行
@@ -21,7 +22,7 @@ function formatReset() {
   setLogHideCol(); // A列非表示化
 }
 
-// 全処理実行
+// 全処理実行（土台づくり）
 function setLog() {
   setLogRows(); // 行数調整（表示固定含む）
   setLogWidth(); // 幅
@@ -65,6 +66,7 @@ function mboAreaCreate(start, unit) {
   }
 }
 
+// 日ヘッダーづくり（単体処理）
 function dayHeaderCreate(row) {
   llSheet.getRange(row, logSheetStartCol).check();
   llSheet.getRange(row, logSheetCodeCol).clearDataValidations();
@@ -75,6 +77,7 @@ function dayHeaderCreate(row) {
   }
 }
 
+// 中身（日ヘッダー・MBOエリア）初期化
 function setSheetInit(){
   setDayHeaderFlag();
   setMboAreaInit();
@@ -89,7 +92,7 @@ function setDayHeaderFlag() { // 日ヘッダーチェックOn
   }
 }
 
-
+// MBOエリアづくり
 function setMboAreaInit() { // MBOエリア作成
   // 01週
   mboAreaCreate(logDataStartRow, '01週');
