@@ -3,8 +3,8 @@
 // 変数
 const runFlagData = llSheet.getRange('H2').getValue();
 const runFlagCols = logLastCol;
-const runFlagOff = runFlagData === '' && runFlagCols === 18;
-const runFlagOn = runFlagCols === 18;
+const runFlagOff = runFlagData === '' || runFlagCols !== 18;
+const runFlagOn = runFlagData !== '' && runFlagCols === 18;
 
 // 空白行：数式挿入
 function setLogFormulaBlank() {
@@ -39,7 +39,7 @@ function setLogFormulaBlank() {
 // 今ココ（日ヘッダー・データ行）
 // データ行
 function imaKokoError(){
-  if(runFlagOff){
+  if(runFlagOn){
     for(i=0; i<logDayDataNum; i++){
       const imaKokoYyyy = logDataDsp[i][logSheetYyyyCol - 1];
       const imaKokoMm = logDataDsp[i][logSheetMmCol - 1] - 1;
@@ -116,7 +116,7 @@ function fontCodeColor(row){
 // サポート機能 ※LL編 ※2023/08/26作成中
 // 配列丸ごとだと上手く比較できない？cond〜は二次元、midachiは一次元？
 function supportCol(){
-  if(runFlagOff){
+  if(runFlagOn){
     let supportColCheck = logSheetColCondition[0].toString() !== midashi.toString();
     console.log('logSheetColCondition', logSheetColCondition[0]);
     console.log('midashi', midashi);
@@ -138,7 +138,7 @@ function supportCol(){
 // コード色分け（全体）
 function codeColorReset(){
   console.log('logData', logData);
-  if(runFlagOff){
+  if(runFlagOn){
     for(i=0; i<logDayDataNum; i++){
       const logHeaderCheck = logData[i][logSheetStartCol - 1];
       if(logHeaderCheck === false){
@@ -183,7 +183,7 @@ function codeColorReset(){
 
 // シート初期化？なぜ常駐処理に？
 function logSheetCreateCall(){
-  if(runFlagOff){
+  if(runFlagOn){
     logSheetCreate();
   }
 }
