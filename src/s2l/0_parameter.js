@@ -1,4 +1,4 @@
-// 共通設定
+// LL共通変数
 
 // ファイル・シート
 const llSheet = wflFile.getSheetByName("Log"); // シート
