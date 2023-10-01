@@ -21,7 +21,7 @@ rad.json
 #Test results file
 TestResults.xml
 #GoogleファイルID
-src/env.js
+src/0_env/env.js
 #Macの不要な隠しファイル
 .DS_Store
 
