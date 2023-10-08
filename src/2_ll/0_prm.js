@@ -1,4 +1,4 @@
-// LL共通変数
+// Parameter LL共通変数
 
 // ファイル・シート
 const llSheet = wflFile.getSheetByName("Log"); // シート

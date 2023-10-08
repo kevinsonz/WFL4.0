@@ -1,4 +1,4 @@
-// LL個別処理
+// Process LL個別処理
 
 // シート初期化
 function logSheetCreate(){

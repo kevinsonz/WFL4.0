@@ -1,4 +1,4 @@
-// LL常駐処理
+// Resident LL常駐処理
 
 // 変数
 const runFlagData = llSheet.getRange('H2').getValue();

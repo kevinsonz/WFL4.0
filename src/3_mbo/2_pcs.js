@@ -1,1 +1,1 @@
-// MBO個別処理
+// Process MBO個別処理

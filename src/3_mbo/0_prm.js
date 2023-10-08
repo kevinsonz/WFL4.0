@@ -1,1 +1,1 @@
-// MBO共通変数
+// Parameter MBO共通変数

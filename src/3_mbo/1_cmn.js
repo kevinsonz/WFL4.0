@@ -1,1 +1,1 @@
-// MBO共通処理
+// Common MBO共通処理

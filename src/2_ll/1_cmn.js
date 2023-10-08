@@ -1,4 +1,4 @@
-// LL共通処理
+// Common LL共通処理
 
 // データのみ削除（何のために作った？）
 function setLogClear(){

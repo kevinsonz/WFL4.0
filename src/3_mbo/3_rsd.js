@@ -1,1 +1,1 @@
-// MBO常駐処理
+// Resident MBO常駐処理
