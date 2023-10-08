@@ -53,7 +53,7 @@ let logFontColor = llSheet.getRange(logDayDataStartRow, logSheetStartCol, logDay
 
 // 他
 const maxDay = llSheet.getRange(logFilterRow, logSheetDdCol).getValue(); // 何日？/月
-const initRowsPerDay = 6; // 何行？/日
+const initRowsPerDay = 7; // 何行？/日
 const midashi = ['＋','日付','開始(予定)','終了(振返)','時間(単位)','コード','区分','項目','メモ','↑','↓','↑値','↓値','Er','yyyy','mm','dd','yyyymm'];
 let logSheetColCondition = llSheet.getRange(logSHeetStartRow, logSheetStartCol, 1, logLastCol).getValues(); // 項目状態取得
 
