@@ -1,5 +1,4 @@
 // Parameter LL共通変数
-// スタッシュ後の更新テスト
 
 // ファイル・シート
 const llSheet = wflFile.getSheetByName("Log"); // シート
