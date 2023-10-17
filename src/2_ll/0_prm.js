@@ -44,6 +44,7 @@ const logSheetFontSizeSmallStartCol = logSheetKubunCol; // フォントサイズ
 const logSheetFontSizeSmallNum = logSheetMemoCol - logSheetKubunCol + 1; // フォントサイズ小：対象列数
 const logLastCol = llSheet.getMaxColumns(); // シート最終列（状態）
 const cbCol = [logSheetStartCol,logSheetAgeCol,logSheetSageCol]; // チェックボックス列
+const logColCheck = logLastCol !== logSheetEndCol; // シートの列数が設計と異なるか？
 
 // 行列
 let logData = llSheet.getRange(logDayDataStartRow, logSheetStartCol, logDayDataNum, logSheetEndCol).getValues();
