@@ -244,13 +244,3 @@ function setLogColor() {
 function setLogHideCol(){
   llSheet.hideColumns(logSheetStartCol, 1);
 }
-
-function logColCheckError () {
-  try{
-    if (logColCheck) {
-      throw new Error ('終了');
-    }
-  }catch (e) {
-    console.log (e .message);
-  }
-}

@@ -8,7 +8,6 @@ const runFlagOn = runFlagData !== '' && runFlagCols === 18;
 
 // 空白行：数式挿入
 function setLogFormulaBlank() {
-  logColCheckError(); // 列数チェック
   if(runFlagOn){
     for(i=0; i<logDayDataNum; i++){
       const colorData = logBgColor[i][logSheetDateCol - 1];
