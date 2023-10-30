@@ -244,3 +244,13 @@ function setLogColor() {
 function setLogHideCol(){
   llSheet.hideColumns(logSheetStartCol, 1);
 }
+
+// 共通プログラム（開始位置）
+function beginCommon(){
+
+}
+
+// 共通プログラム（終了位置）
+function endCommon(){
+  
+}
